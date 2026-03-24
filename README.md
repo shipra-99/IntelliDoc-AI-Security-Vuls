@@ -1,6 +1,3 @@
-Got you — here’s a **clean, balanced README** (not too long, not too short), aligned with your actual project + good for recruiters/interviews:
-
----
 
 ````markdown
 # 🧠 IntelliDoc AI – Local RAG Security Assistant
@@ -116,10 +113,5 @@ chroma_cwe_db/  # CWE knowledge base
 This is a **research prototype** built to explore how RAG can improve LLM-based security analysis.
 
 ---
-
-## 👤 Author
-
-Shipra
-MS Computer Science, UNC Charlotte
 
 ```
