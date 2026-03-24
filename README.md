@@ -1,131 +1,125 @@
-# 🧠 IntelliDoc AI – Local RAG Document Assistant
+Got you — here’s a **clean, balanced README** (not too long, not too short), aligned with your actual project + good for recruiters/interviews:
 
-IntelliDoc AI is a fully local **Retrieval-Augmented Generation (RAG)** application that lets you upload PDF documents and ask intelligent questions about them using a locally running LLM.
+---
 
-Built with **Streamlit + LangChain + Ollama + ChromaDB**, it runs entirely on your machine — no external API calls required.
+````markdown
+# 🧠 IntelliDoc AI – Local RAG Security Assistant
+
+IntelliDoc AI is a fully local **Retrieval-Augmented Generation (RAG)** system for **document understanding and code vulnerability analysis**.
+
+It allows you to upload PDFs or source code and ask intelligent questions — powered entirely by a **locally running LLM**, with no external API calls.
 
 ---
 
 ## 🚀 Features
 
-- 📄 Upload and chat with multiple PDF documents  
-- 🔎 Semantic search using vector embeddings  
-- 🤖 Local LLM inference via Ollama  
-- 🧠 Retrieval-Augmented Generation (RAG) pipeline  
-- 💬 Clean Streamlit chat interface  
-- 💾 Persistent vector store (ChromaDB)  
+- 📄 Chat with PDF documents  
+- 💻 Analyze source code (Java, Python, JS, C/C++)  
+- 🔐 Detect potential security vulnerabilities  
+- 🧠 RAG with CWE-based knowledge retrieval  
+- 🤖 Local LLM inference using Ollama  
+- 🔎 Semantic search with vector embeddings  
+- 💬 Simple Streamlit chat interface  
 
 ---
 
 ## 🏗️ Tech Stack
 
 - **Frontend**: Streamlit  
-- **LLM**: Ollama (Qwen2.5 / Mistral supported)  
+- **LLM**: Ollama (Qwen2.5-Coder)  
 - **Embeddings**: FastEmbed  
-- **Vector Database**: ChromaDB  
+- **Vector DB**: ChromaDB  
 - **Framework**: LangChain  
 
 ---
 
-## ⚙️ Setup Instructions
-
-### 1️⃣ Clone the Repository
+## ⚙️ Setup
 
 ```bash
-git clone https://github.com/your-username/intellidoc-ai.git
-cd intellidoc-ai
-```
+git clone https://github.com/your-username/IntelliDoc-AI-Security-Vuls.git
+cd IntelliDoc-AI-Security-Vuls
 
-### 2️⃣ Create Virtual Environment
 
-```bash
 python -m venv venv
-```
+source venv/bin/activate   # Windows: venv\Scripts\activate
 
-Activate:
-
-**Mac/Linux**
-```bash
-source venv/bin/activate
-```
-
-**Windows**
-```bash
-venv\Scripts\activate
-```
-
-### 3️⃣ Install Dependencies
-
-```bash
 pip install -r requirements.txt
-```
+````
 
-### 4️⃣ Install & Setup Ollama
-
-Download from:
-
-https://ollama.com
-
-Pull a model:
+Install Ollama and pull model:
 
 ```bash
-ollama pull qwen2.5
+ollama pull qwen2.5-coder:3b
 ```
-
-(Optional alternative)
-
-```bash
-ollama pull mistral
-```
-
-Ensure Ollama is running in the background.
 
 ---
 
-## ▶️ Run the Application
+## ▶️ Run
 
 ```bash
 streamlit run app.py
 ```
 
-Open in browser:
-
-```
-http://localhost:8501
-```
+Open: [http://localhost:8501](http://localhost:8501)
 
 ---
 
 ## 📂 How It Works
 
-1. Upload a PDF  
-2. Text is split into chunks  
-3. Chunks are embedded using FastEmbed  
-4. Stored in ChromaDB  
-5. User query retrieves relevant chunks  
-6. Context + Question → LLM → Final Answer  
+### 📄 PDF Mode
+
+* Chunk → Embed → Store (ChromaDB)
+* Retrieve relevant context → LLM answers
+
+### 💻 Code Analysis Mode
+
+* Upload code file
+* Retrieve relevant **CWE knowledge**
+* Combine code + retrieved context
+* LLM identifies:
+
+  * Vulnerability type (CWE)
+  * Location in code
+  * Explanation
+  * Fix suggestions
 
 ---
 
-## 📁 Project Structure
+## 🧠 Key Idea
+
+Instead of relying only on the model, this system uses **RAG to inject external vulnerability knowledge (CWE)**, helping the LLM analyze **unseen code more effectively**.
+
+---
+
+## 🔐 Why Local?
+
+* No data leaves your machine
+* Full control over sensitive code
+* No API costs
+* Works offline
+
+---
+
+## 📁 Structure
 
 ```
-.
-├── app.py
-├── rag.py
-├── requirements.txt
-├── chroma_db/
-└── README.md
+app.py          # Streamlit UI
+rag.py          # RAG + analysis pipeline
+chroma_db/      # Document embeddings
+chroma_cwe_db/  # CWE knowledge base
 ```
 
 ---
 
-## 🔐 Why Local RAG?
+## ⚠️ Note
 
-- No API costs  
-- Full data privacy  
-- Works offline  
-- Fully customizable  
-- Ideal for experimentation & research  
+This is a **research prototype** built to explore how RAG can improve LLM-based security analysis.
 
 ---
+
+## 👤 Author
+
+Shipra
+MS Computer Science, UNC Charlotte
+
+```
